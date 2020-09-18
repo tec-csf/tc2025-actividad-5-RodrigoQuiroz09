@@ -145,7 +145,7 @@ void procesos_fork(Tuberia * hijos, int no_hijos){
             {
                 char testigo=leer((aux+no_hijos-1)); //Leo el testigo enviado por el proceso 0
                 printf("<-- Soy el proceso con PID = %d y recibí el testigo = %c, el cual tendré por 5 segundos\n",getpid(),testigo);
-                sleep(2);
+                sleep(5);
                 printf("<—- Soy el proceso con PID %d y acabo de enviar el testigo %c\n",getpid(),testigo);
                 escribir(testigo,aux); //Escribo para el primer pipe 
                 printf("\n");  
@@ -158,7 +158,7 @@ void procesos_fork(Tuberia * hijos, int no_hijos){
             {   
                 char testigo=leer(aux-1); //Leo desde el ciclo correspondiente 
                 printf("<-- Soy el proceso con PID = %d y recibí el testigo = %c, el cual tendré por 5 segundos\n",getpid(),testigo);
-                sleep(2);
+                sleep(5);
                 printf("<—- Soy el proceso con PID %d y acabo de enviar el testigo %c\n",getpid(),testigo);
                 escribir(testigo,aux); // Escribo para el siguiente pid
                 printf("\n");                                        
